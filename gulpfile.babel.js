@@ -1,6 +1,10 @@
 // HTML
 import pug from 'gulp-pug'
 
+// CSS
+import autoprefixer from 'autoprefixer'
+import postcss from 'gulp-postcss'
+
 // SASS
 import dartSass from 'sass'; // Módulo de sass oficial en nodejs
 import gulpSass from 'gulp-sass'; // Módulo de sass de gulp
@@ -26,16 +30,21 @@ import { init as server, stream, reload } from 'browser-sync' // Estas dependenc
 // Solo poner esta constante en true cuando todo el código esté depurado y listo para producción
 const production = false;
 
+const cssPlugins = [
+  autoprefixer()
+]
+
 // REVIEW: Tareas de Gulp
 
 // Tarea para sass
 gulp.task('sass', () => { 
   return gulp
-  .src('./src/scss/styles.scss')
+  .src('./src/scss/*.scss')
   .pipe(plumber())
   .pipe(sass({
     outputStyle: "compressed" // Para optimizar código css
-  }))  
+  }))
+  .pipe(postcss(cssPlugins))  
   .pipe(gulp.dest('./public/css'))
   .pipe(stream())
 })
@@ -57,6 +66,9 @@ gulp.task('views', () => {
   .pipe(plumber())
   .pipe(pug({ 
     pretty: production ? false : true,
+    data: {
+      require: require
+    }
   }))
   .pipe(cachebust({
     type: 'timestamp'
