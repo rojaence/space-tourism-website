@@ -8,16 +8,6 @@
   src: url('../assets/fonts/BarlowCondensed-Regular.ttf');
 }
 
-@font-face {
-  font-family: 'OpenSans';
-  src: url( '../assets/fonts/OpenSans-VariableFont_wdth,wght.ttf' );
-}
-
-@font-face {
-  font-family: 'Lora';
-  src: url( '../assets/fonts/Lora-VariableFont_wght.ttf' );
-}
-
 $home-bg-desktop: url('../assets/home/background-home-desktop.jpg');
 $home-bg-tablet: url('../assets/home/background-home-tablet.jpg');
 $home-bg-mobile: url('../assets/home/background-home-mobile.jpg');
@@ -60,5 +50,13 @@ $main-char-space: 1px;
 
 $nav-char-space: 2.7px;
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 

@@ -21,11 +21,27 @@ mainNav.addEventListener('click', (e) => {
 });
 
 sliderControlButtons.forEach(controlButton => {
-  controlButton.addEventListener('click', (e) => {
-    console.log('Clicked');
-    console.log(controlButton.dataset.id)
+  controlButton.addEventListener('click', (e) =>  {
+    toggleSlider(controlButton.dataset.id);
   })
 });
+
+const toggleSlider = (index) => {
+  sliderControlButtons.forEach(button => {
+    if (button.dataset.id === index) button.classList.add('slider-switch__button--active');
+    else button.classList.remove('slider-switch__button--active');
+  });
+
+  sliderImages.forEach(image => {
+    if (image.dataset.id === index) image.classList.add('slider__picture--active');
+    else image.classList.remove('slider__picture--active');
+  })
+
+  sliderCards.forEach(card => {
+    if (card.dataset.id === index) card.classList.add('card--active');
+    else card.classList.remove('card--active');
+  })
+}
 
 const toggleMenu = (active) => {
   if (active) {

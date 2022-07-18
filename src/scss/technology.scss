@@ -11,3 +11,11 @@ body {
     background-image: $tech-bg-desktop;
   }
 }
+
+.main {
+  padding-left: 0;
+  padding-right: 0;
+  @media screen and (min-width: 1025px) {
+    min-width: 1000px;
+  }
+}

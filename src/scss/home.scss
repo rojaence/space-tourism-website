@@ -103,12 +103,13 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     align-items: center;
+    min-width: 960px;
   }
   .introduction {
     &__title {
       font-size: $sh1-font-size;
       &--accent {
-        font-size: $h1-font-size;
+        font-size: $h1-font-size - 25px;
       }
     }
     &__title, &__copy {

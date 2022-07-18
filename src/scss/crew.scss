@@ -11,3 +11,9 @@ body {
     background-image: $crew-bg-desktop;
   }
 }
+
+.main {
+  @media screen and (min-width: 1025px) {
+    padding-bottom: 0;
+  }
+}

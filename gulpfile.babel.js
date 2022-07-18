@@ -28,7 +28,7 @@ import { init as server, stream, reload } from 'browser-sync' // Estas dependenc
 // Variables - constantes
 // Para indicar a alguna tarea que compile en modo de producción o desarrollo
 // Solo poner esta constante en true cuando todo el código esté depurado y listo para producción
-const production = false;
+const production = true;
 
 const cssPlugins = [
   autoprefixer()
