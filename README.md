@@ -60,7 +60,7 @@ With nodejs and npm installed in your system,
 runs the next commands in a terminal
 
   - To install project - 'npm install'
-  - To run serve and compile tasks - 'gulp'
+  - To run server and compile tasks - 'gulp'
 
 ## Author
 
